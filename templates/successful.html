@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Success</title>
+    <!-- <link rel="stylesheet" href="{{url_for('static', filename= 'successful_style.css')}}" /> -->
+    <link rel="stylesheet" href="../static/successful_style.css">
+  </head>
+  <body>
+    <div class="modal-background">
+      <div class="modal">
+        <div class="checkmark">✔</div>
+        <div class="success-message">Thank You!</div>
+        <div class="details-message">
+            <p>Your file location : {{path_file}}</p>
+            <p>Your download is successful!</p>
+        </div>
+          <button class="ok-button" onclick="location.href = '/'">OK</button>
+      </div>
+      <div class="sign">
+        <p>Created by - <b>@aimanteme</b></p>
+      </div>
+    </div>
+  </body>
+</html>

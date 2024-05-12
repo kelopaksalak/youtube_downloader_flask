@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube Downloader</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename= 'style.css')}}"
+    />
+    <script src="{{url_for('static', filename= 'script.js')}}"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Youtube Video/Audio Downloader</h1>
+      <form method="POST">
+        <input
+          class="input-link"
+          type="text"
+          id="link-yt"
+          name="link-yt"
+          placeholder="Enter your Youtube URL"
+          required
+        />
+        <p>Choose your format:</p>
+        <div class="btn-format">
+          <div class="btn-video">
+            <label>
+              <input
+                type="radio"
+                id="format"
+                name="format"
+                value="1"
+                checked
+              />Video
+            </label>
+          </div>
+          <div class="btn-audio">
+            <label>
+              <input type="radio" id="format" name="format" value="2" />Audio
+            </label>
+          </div>
+        </div>
+        <form action="{{choose_path}}" method="get">
+          <button class="button" type="submit">Download</button>
+        </form>
+      </form>
+    </div>
+    <div class="sign">
+      <p>Created by - <b>@aimanteme</b></p>
+    </div>
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for
+    message in messages %}
+    <script>
+      myErrorFunction("{{message}}");
+    </script>
+    {% endfor %}{% endif %} {% endwith %}
+  </body>
+</html>
